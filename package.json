@@ -1,0 +1,19 @@
+{
+  "name": "google-maps-places-mock",
+  "version": "1.0.0",
+  "description": "Jest mock Google Maps Places service",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craig115/google-maps-places-mock.git"
+  },
+  "author": "Craig115",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Craig115/google-maps-places-mock/issues"
+  },
+  "homepage": "https://github.com/Craig115/google-maps-places-mock#readme"
+}
