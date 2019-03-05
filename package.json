@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Craig115/google-maps-places-mock/issues"
   },
-  "homepage": "https://github.com/Craig115/google-maps-places-mock#readme"
+  "homepage": "https://github.com/Craig115/google-maps-places-mock#readme",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
 }
