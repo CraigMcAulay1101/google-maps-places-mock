@@ -1,7 +1,7 @@
 {
   "name": "google-maps-places-mock",
   "version": "1.0.0",
-  "description": "Jest mock Google Maps Places service",
+  "description": "Google Maps Places service Mock",
   "main": "index.js",
   "scripts": {
     "test": "test"

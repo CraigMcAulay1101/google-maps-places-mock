@@ -1,14 +1,14 @@
 "use strict";
 
-class GooglePlacesMock {
+const GooglePlacesMock = {
 
-    constructor() {
-        this.myMock = jest.fn();
-    }
+    Mock: (params) => {
+        if (typeof variable !== 'undefined') {
 
-    dosomething() {
-        console.log(this.myMock);
+        } else {
+            
+        }
     } 
 }
 
-module.exports = GooglePlacesMock;  
+module.exports = GooglePlacesMock; 
