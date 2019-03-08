@@ -35,7 +35,16 @@
             "type": "array",
             "items": [
                 {
-                    "$ref": "photos.json"
+                   "height": { "type": "string" },
+                   "html_attributions": { 
+                       "type": "array",
+                       "items": [
+                           {
+                               "type": "string"
+                           }
+                       ]
+                    },
+                   "width": "integer"
                 }
             ]
         },
