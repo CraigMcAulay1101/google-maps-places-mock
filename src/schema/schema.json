@@ -2,7 +2,25 @@
     "type": "object",
     "properties": {
         "geometry": {
-            "$ref": "geometry.json"
+            "type": "object",
+            "properties": {
+                "location": {
+                    "type": "object",
+                    "properties": {
+                        "lat": { "type": "integer" },
+                        "lng": { "type": "integer"}
+                    }
+                },
+                "viewport": {
+                    "type": "object",
+                    "properties": {
+                        "south": { "type": "integer" },
+                        "west": { "type": "integer" },
+                        "north": { "type": "integer" },
+                        "east": { "type": "integer" }
+                    }
+                }
+            }
         },
         "icon": { "type": "string" },
         "id": { "type": "string" },
