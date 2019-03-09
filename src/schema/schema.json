@@ -1,81 +1,39 @@
 {
-    "type": "object",
-    "properties": {
-        "geometry": {
-            "type": "object",
-            "properties": {
-                "location": {
-                    "type": "object",
-                    "properties": {
-                        "lat": { "type": "integer" },
-                        "lng": { "type": "integer"}
-                    }
-                },
-                "viewport": {
-                    "type": "object",
-                    "properties": {
-                        "south": { "type": "integer" },
-                        "west": { "type": "integer" },
-                        "north": { "type": "integer" },
-                        "east": { "type": "integer" }
-                    }
-                }
-            }
+    "geometry": {
+        "location": {
+            "lat": "Number",
+            "lng": "Number"
         },
-        "icon": { "type": "string" },
-        "id": { "type": "string" },
-        "name": { "type": "string" },
+        "viewport": {
+            "south": "Number",
+            "west": "Number",
+            "north": "Number",
+            "east": "Number"
+        },
+        "icon": "String",
+        "id": "Number",
+        "name": "Number",
         "opening_hours": {
-            "type": "object",
-            "properties": {
-                "open_now": { "type": "boolean" }
+            "open_now": "Boolean"
+        },
+        "photos": [
+            {
+                "height": "Number",
+                "html_attributions": "Array",
+                "width": "Number"
             }
-        },
-        "photos": {
-            "type": "array",
-            "items": [
-                {
-                   "height": { "type": "string" },
-                   "html_attributions": { 
-                       "type": "array",
-                       "items": [
-                           {
-                               "type": "string"
-                           }
-                       ]
-                    },
-                   "width": "integer"
-                }
-            ]
-        },
-        "place_id": { "type": "string" },
+        ],
+        "place_id": "String",
         "plus_code": {
-            "type": "object",
-            "properties": {
-                "compound_code": { "type": "string" },
-                "global_code": { "type": "string" }
-            }
+            "compound_code": "String",
+            "global_code": "String"
         },
-        "rating": { "type": "integer" },
-        "reference": { "type": "string" },
-        "scope": { "type": "string" },
-        "types": {
-            "type": "array",
-            "items": [
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "user_ratings_total": { "type": "integer" },
-        "vicinity": { "type": "string" },
-        "html_attributions": {
-            "type": "array",
-            "items": [
-                {
-                    "type": "null"
-                }
-            ]
-        }
+        "rating": "Decimal128",
+        "reference": "String",
+        "scope": "String",
+        "types": "Array",
+        "user_ratings_total": "Number",
+        "vicinity": "String",
+        "html_attributions": "Array"
     }
 }
