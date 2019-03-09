@@ -1,9 +1,11 @@
 "use strict";
 
-const schema = require('./schema.json');
+const schema = require('./schema.js');
 
-const constructPlace = new Promise ((resolve, reject) => {
-
+let constructPlace = ((params) => {
+    return new Promise((resolve, reject) => {
+        resolve();
+    });
 });
 
 module.exports = constructPlace;

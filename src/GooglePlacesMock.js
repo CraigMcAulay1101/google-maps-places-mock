@@ -17,9 +17,11 @@ class GooglePlacesMock {
     }
 
     nearbySearch() {
-        constructPlace(this).then(() => {
-
-        });
+        for (var i = 0; i < this.results; i++) {
+            constructPlace(this).then(() => {
+                // Do Something
+            });    
+        }
     }
 
 }
