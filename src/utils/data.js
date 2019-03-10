@@ -17,15 +17,7 @@ const generateData = ((params) => {
 });
 
 function validateData(data) {
-    if (data === 'Number') {
-        return generateNumber();
-    } else if (data === 'String') {
-        return generateString();
-    } else if (data === 'Boolean') {
-        return generateBool();
-    } else if (data === 'Decimal128') {
-        return generateDecimal();
-    }
+    return eval("generate" + data + "()");
 }
 
 function generateNumber() {
@@ -39,12 +31,16 @@ function generateString() {
     return loremIpsum();
 }
 
-function generateBool() {
+function generateBoolean() {
     return Math.random() >= 0.5;
 }
 
-function generateDecimal() {
+function generateDecimal128() {
     return Math.random();
+}
+
+function generateArray() {
+    return;
 }
 
 module.exports = generateData;  
