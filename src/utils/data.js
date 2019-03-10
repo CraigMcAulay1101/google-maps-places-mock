@@ -3,7 +3,7 @@
 const loremIpsum = require('lorem-ipsum');
 
 const generateData = ((params) => {
-    
+
     Object.keys(params).forEach((key) => {
         if (typeof params[key] === 'object') {
             generateData(params[key]);
@@ -21,6 +21,10 @@ function validateData(data) {
         return generateNumber();
     } else if (data === 'String') {
         return generateString();
+    } else if (data === 'Boolean') {
+        return generateBool();
+    } else if (data === 'Decimal128') {
+        return generateDecimal();
     }
 }
 
@@ -33,6 +37,14 @@ function generateNumber() {
 
 function generateString() {
     return loremIpsum();
+}
+
+function generateBool() {
+    return Math.random() >= 0.5;
+}
+
+function generateDecimal() {
+    return Math.random();
 }
 
 module.exports = generateData;  
