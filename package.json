@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Craig115/google-maps-places-mock#readme",
   "devDependencies": {
     "jest": "^24.1.0"
+  },
+  "dependencies": {
+    "lorem-ipsum": "^1.0.6",
+    "schm": "^0.4.1"
   }
 }
