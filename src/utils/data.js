@@ -9,7 +9,7 @@ const generateData = ((params) => {
             generateData(params[key]);
         } else {
             let data = new Dummy(params[key]);
-            params[key] = data;
+            params[key] = data.dummydata;
         }
     })
 
@@ -18,7 +18,9 @@ const generateData = ((params) => {
 
 class Dummy {
     constructor(data) {
-        return eval("this.generate" + data + "()");
+        this.dummydata = eval("this.generate" + data + "()");
+
+        return;
     }
 
     generateNumber() {
