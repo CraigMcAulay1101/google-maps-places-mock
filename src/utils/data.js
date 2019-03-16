@@ -8,7 +8,7 @@ const generateData = ((params) => {
         if (typeof params[key] === 'object') {
             generateData(params[key]);
         } else {
-            let data = validateData(params[key]);
+            let data = new Dummy(params[key]);
             params[key] = data;
         }
     })
@@ -16,31 +16,36 @@ const generateData = ((params) => {
     return params;
 });
 
-function validateData(data) {
-    return eval("generate" + data + "()");
-}
+class Dummy {
+    constructor(data) {
+        return eval("this.generate" + data + "()");
+    }
 
-function generateNumber() {
-    let base = Math.floor(Math.random() * 20);
-    let multiplier = Math.floor(Math.random() * 20);
+    generateNumber() {
+        let base = Math.floor(Math.random() * 20);
+        let multiplier = Math.floor(Math.random() * 20);
+    
+        return base * multiplier * 50000;    
+    }
 
-    return base * multiplier * 50000;
-}
+    generateString() {
+        let base = Math.floor(Math.random() * 20);
+        let multiplier = Math.floor(Math.random() * 20);
+    
+        return base * multiplier * 50000;    
+    }
 
-function generateString() {
-    return loremIpsum();
-}
+    generateBoolean() {
+        return Math.random() >= 0.5;
+    }
 
-function generateBoolean() {
-    return Math.random() >= 0.5;
-}
+    generateDecimal128() {
+        return Math.random();
+    }
 
-function generateDecimal128() {
-    return Math.random();
-}
-
-function generateArray() {
-    return;
+    generateArray() {
+        return;
+    }
 }
 
 module.exports = generateData;  
