@@ -18,14 +18,12 @@ const generateData = ((params) => {
     return params;
 });
 
-const generateLocation = ((position) => {
-
-    let initialPoint = { lat: 55.86279, lon: -4.25424 };
-
-    let dist = 8000;
-    let bearing = 90;
-
-    return geolib.computeDestinationPoint(initialPoint, dist, bearing);
+const generateLocation = ((geoInfo) => {
+    let initialPoint = { lat: geoInfo.location.lat, lon: geoInfo.location.lng };
+    let rndm = Math.floor(Math.random() * 999) + 1;
+    let radius = geoInfo.radius + rndm;
+    
+    return geolib.computeDestinationPoint(initialPoint, radius, 45);
 })
 
 class Dummy {

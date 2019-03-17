@@ -9,7 +9,7 @@ let constructPlace = ((params, schema) => {
         let template = clonedeep(schema);
         let placedata = generateData(template); 
 
-        placedata.geometry.location = generateLocation(schema.geometry.location);
+        placedata.geometry.location = generateLocation(params);
         
         resolve(placedata);  
 
