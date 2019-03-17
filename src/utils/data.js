@@ -7,8 +7,9 @@ const generateData = ((params) => {
     Object.keys(params).forEach((key) => {
         if (typeof params[key] === 'object') {
             generateData(params[key]);
-        } else {
+        } else {        
             let data = new Dummy(params[key]);
+
             params[key] = data.dummydata;
         }
     })
@@ -19,7 +20,6 @@ const generateData = ((params) => {
 class Dummy {
     constructor(data) {
         this.dummydata = eval("this.generate" + data + "()");
-
         return;
     }
 
@@ -31,10 +31,7 @@ class Dummy {
     }
 
     generateString() {
-        let base = Math.floor(Math.random() * 20);
-        let multiplier = Math.floor(Math.random() * 20);
-    
-        return base * multiplier * 50000;    
+        return loremIpsum();    
     }
 
     generateBoolean() {
@@ -46,7 +43,7 @@ class Dummy {
     }
 
     generateArray() {
-        return;
+        return [];
     }
 }
 

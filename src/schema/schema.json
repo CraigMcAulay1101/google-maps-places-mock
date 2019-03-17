@@ -13,7 +13,7 @@
     },
     "icon": "String",
     "id": "Number",
-    "name": "Number",
+    "name": "String",
     "opening_hours": {
         "open_now": "Boolean"
     },
