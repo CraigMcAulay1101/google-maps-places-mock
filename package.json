@@ -19,6 +19,6 @@
   "dependencies": {
     "geolib": "^2.0.24",
     "lodash.clonedeep": "^4.5.0",
-    "lorem-ipsum": "^1.0.6",
+    "lorem-ipsum": "^1.0.6"
   }
 }
