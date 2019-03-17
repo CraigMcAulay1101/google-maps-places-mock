@@ -1,6 +1,7 @@
 "use strict";
 
 const constructPlace = require('./construct.js');
+const getSchema = require('./schema.js');
 
 class GooglePlacesMock {
 
@@ -17,11 +18,12 @@ class GooglePlacesMock {
     }
 
     nearbySearch() {
-        for (var i = 0; i < this.results; i++) {
-            constructPlace(this).then(() => {
-                // Do Something
-            });    
-        }
+        getSchema.then((schema) => {
+            for (var i = 0; i < this.results; i++) {
+                constructPlace(this, schema).then((place) => {
+                });    
+            }    
+        });
     }
 
 }
