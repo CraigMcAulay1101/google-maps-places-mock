@@ -1,26 +1,36 @@
 "use strict";
 
 const loremIpsum = require('lorem-ipsum');
+const geolib = require('geolib');
 
 const generateData = ((params) => {
-
+    
     Object.keys(params).forEach((key) => {
         if (typeof params[key] === 'object') {
-            generateData(params[key]);
+             generateData(params[key]);
         } else {        
             let data = new Dummy(params[key]);
-
+    
             params[key] = data.dummydata;
         }
-    })
+    })    
 
     return params;
 });
 
+const generateLocation = ((position) => {
+
+    let initialPoint = { lat: 55.86279, lon: -4.25424 };
+
+    let dist = 8000;
+    let bearing = 90;
+
+    return geolib.computeDestinationPoint(initialPoint, dist, bearing);
+})
+
 class Dummy {
     constructor(data) {
         this.dummydata = eval("this.generate" + data + "()");
-        return;
     }
 
     generateNumber() {
@@ -47,4 +57,4 @@ class Dummy {
     }
 }
 
-module.exports = generateData;  
+module.exports = { generateData, generateLocation };  

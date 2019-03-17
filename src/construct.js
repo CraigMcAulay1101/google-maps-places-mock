@@ -1,18 +1,21 @@
 "use strict";
 
-const schm = require('schm')
 const clonedeep = require('lodash.clonedeep')
-const generateData = require('./utils/data');
+const {generateData, generateLocation} = require('./utils/data');
 
 let constructPlace = ((params, schema) => {
     return new Promise((resolve, reject) => {
         
         let template = clonedeep(schema);
-        let generatedSchema = schm(schema);
-        let dummydata = generateData(template);
+        let placedata = generateData(template); 
 
-        resolve(generatedSchema.parse(dummydata));            
-    });
+        placedata.geometry.location = generateLocation(schema.geometry.location);
+        
+        resolve(placedata);  
+
+    }).catch((error) => {
+        console.log(error);
+    })
 });
 
 module.exports = constructPlace;
