@@ -18,12 +18,29 @@ class GooglePlacesMock {
     }
 
     nearbySearch() {
-        getSchema.then((schema) => {
-            for (var i = 0; i < this.results; i++) {
+        return new Promise((resolve) => {
+            getSchema.then((schema) => {
+                this.getPlaces(schema).then((places) => {
+                    resolve(places)
+                })
+            });    
+        })
+    }
+
+    getPlaces(schema) {
+        return new Promise((resolve) => {
+            let places = [];
+
+            for (let i = 0; i < this.results; i++) {
                 constructPlace(this, schema).then((place) => {
-                });    
-            }    
-        });
+                    places.push(place);
+
+                    if (places.length === this.results) {
+                        resolve(places);
+                    }
+                });
+            }   
+        })
     }
 
 }
