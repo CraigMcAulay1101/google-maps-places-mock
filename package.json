@@ -4,7 +4,7 @@
   "description": "Google Maps Places service Mock",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
     "geolib": "^2.0.24",
     "lodash.clonedeep": "^4.5.0",
     "lorem-ipsum": "^1.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
   }
 }
