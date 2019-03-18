@@ -1,3 +1,3 @@
 const GooglePlacesMock = require('./src/GooglePlacesMock');
 
-console.log(GooglePlacesMock.Mock("test"));
+module.exports = GooglePlacesMock;

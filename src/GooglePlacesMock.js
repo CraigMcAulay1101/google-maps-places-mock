@@ -24,6 +24,8 @@ class GooglePlacesMock {
                     resolve(places)
                 })
             });    
+        }).catch((err) => {
+            console.log(err);
         })
     }
 
