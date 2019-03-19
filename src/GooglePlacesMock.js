@@ -1,7 +1,7 @@
 "use strict";
 
 const constructPlace = require('./construct.js');
-const getSchema = require('./schema.js');
+const schema = require('./schema.js');
 
 class GooglePlacesMock {
 
@@ -19,11 +19,9 @@ class GooglePlacesMock {
 
     nearbySearch() {
         return new Promise((resolve) => {
-            getSchema.then((schema) => {
-                this.getPlaces(schema).then((places) => {
-                    resolve(places)
-                })
-            });    
+            this.getPlaces(schema).then((places) => {
+                resolve(places)
+            })
         }).catch((err) => {
             console.log(err);
         })
