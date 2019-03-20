@@ -34,3 +34,7 @@ it('Places should be an array', () => {
 ```
 
 The result will return an array of objects, mocking the regular Google Maps Places Service API response
+
+# License
+
+[MIT](https://github.com/Craig115/google-maps-places-mock/blob/master/LICENSE)
