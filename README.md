@@ -20,11 +20,17 @@ Results (optional, defaults to 20)
 **Example**
 
 ```javascript
+import GooglePlacesMock from 'google-maps-places-mock'
+
 let g = new GooglePlacesMock({lat: 55.86279, lng: -4.25424}, 1000)
 
-g.nearbySearch().then((places) => {
-    //console.log(places)
+// Unit Test
+it('Places should be an array', () => {
+    g.nearbySearch().then((places) => {
+        expect(places).to.be.an('array')    
+    })
 })
+
 ```
 
-The result will return an array of objects, mocking the regular Google Maps Places Service Api response
+The result will return an array of objects, mocking the regular Google Maps Places Service API response
