@@ -2,4 +2,5 @@ version: 0.2
 
 phases:
   build:
-    - npm publish
+    commands:
+      - npm publish
