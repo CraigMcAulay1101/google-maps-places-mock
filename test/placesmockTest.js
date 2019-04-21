@@ -6,7 +6,7 @@ const GooglePlacesMock = require('../src/GooglePlacesMock')
 const expect = chai.expect
 
 describe('GooglePlacesMock', () => {
-    console.log("test commi")
+    
     const google = new GooglePlacesMock({ lat: 40.6971494, lng: -74.2598655 }, 8000)
 
     it('Mocked results should be an array of objects', () => {
