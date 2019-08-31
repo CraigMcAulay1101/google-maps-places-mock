@@ -1,6 +1,15 @@
 version: 0.2
 
+env:
+  parameter-store:
+    NPM_USERNAME: "npm-username"
+    NPM_PASSWORD: "npm-password"
+    NPM_EMAIL: "npm-email"
+
 phases:
+  install:
+  - npm install -g npm-cli-adduser
   build:
     commands:
+      - npm-cli-adduser --registry https://www.npmjs.com/package/google-maps-places-mock --username $NPM_USERNAME --password $NPM_PASSWORD --email $NPM_EMAIL
       - npm publish
