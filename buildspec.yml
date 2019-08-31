@@ -14,5 +14,5 @@ phases:
     - npm install -g npm-cli-adduser
   build:
     commands:
-      - npm-cli-adduser --registry https://www.npmjs.com/package/google-maps-places-mock --username $NPM_USERNAME --password $NPM_PASSWORD --email $NPM_EMAIL
+      - npm-cli-adduser --username $NPM_USERNAME --password $NPM_PASSWORD --email $NPM_EMAIL
       - npm publish
