@@ -8,6 +8,9 @@ env:
 
 phases:
   install:
+  runtime-versions:
+    nodejs: 10
+  commands:
   - npm install -g npm-cli-adduser
   build:
     commands:
